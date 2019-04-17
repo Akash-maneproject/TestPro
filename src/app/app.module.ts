@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
+// import {  } from "@angu";
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
@@ -18,14 +18,21 @@ import { AngularFirestoreModule  } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule  } from '@angular/fire/database';
 import {environment } from '../environments/environment';
 import { AlertComponent } from './alert/alert.component';
+import { PagenotfounddataService } from './pagenotfounddata.service';
+import { NavbarComponent } from './navbar/navbar.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', 
-  component: DashboardComponent,
-  canActivate: [AuthGuard]
+
+  { 
+    path: 'dashboard', 
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
  },
   {path: '', redirectTo:'login', pathMatch: 'full'},
   { path: '**', component: PagenotfoundComponent  },
+  { path: 'pagenotfound', component: PagenotfoundComponent  },
+
+  
 ];
 @NgModule({
   declarations: [
@@ -33,7 +40,8 @@ const routes: Routes = [
     LoginComponent,
     DashboardComponent,
     PagenotfoundComponent,
-    AlertComponent
+    AlertComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import * as CanvasJS from './canvas.min';
 var CanvasJS = require('./canvas.min.js');
 declare var require: any
-import { Router } from "@angular/router";
+import { Router,ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +11,14 @@ import { Router } from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public _router: Router) { }
-
+  constructor(public _router: Router,public activatedRoute:ActivatedRoute) { }
+  data:any;
  ngOnInit() {
+	console.log("Dashboarsd");
+	// console.log(this.activatedRoute.data['pagenotfoundData']);
+	// this.activatedRoute.data['pagenotfoundData']
+    // console.log(this.data);
+
   let isLoggedIn:any =  window.localStorage.getItem('isLoggedIn');
   // if(isLoggedIn != '1'  && isLoggedIn != 1 ){
   //   this._router.navigate(['/login'])

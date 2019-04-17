@@ -81,9 +81,10 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/dashboard']);
           this.firebaseService.setAuthFlag(true);
          }else{
-    
+          
+          alert("Username and password is incorrect");
           this.firebaseService.setAuthFlag(false);
-          this._router.navigate(['/pagenotfound']);
+          return;
          }
      });
      

@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router,ActivatedRoute } from "@angular/router";
 import { FormGroup,FormControl,FormBuilder,Validators } from "@angular/forms"; 
 import { AuthenticationService } from '../authentication.service';
 import { AlertService } from '../alert.service';
 import { FirebaseService } from '../firebase.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
 
 import { first } from 'rxjs/operators';
 
@@ -14,6 +16,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   returnUrl: string;
+  modalRef: BsModalRef;
   userData = {
     username:'',
     password: ''
@@ -25,7 +28,8 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService,   
     private alertService: AlertService,
     public activatedRoute: ActivatedRoute,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    private modalService: BsModalService
  
   ) { 
 
@@ -42,30 +46,36 @@ export class LoginComponent implements OnInit {
         // Taluka_signup: ["",Validators.required],
         // country_signup: ["",Validators.required],
         // });
-
-
   }
 
-
-
   ngOnInit() {
-    console.log("sdsd");
+    this.getRegData();
     this.loginForm = this.fb.group({
 
       username: ["",Validators.required], 
       password: ["",Validators.required], 
     });
 
+    
     // this.returnUrl = this.ActivatedRoute.snapshot.queryParams['returnUrl'] || '/';
   }
+emplist:any;
+  getRegData(){
 
+    this.firebaseService.getEmpList().subscribe( (data) => {
+
+      this.emplist = data;
+      console.log(this.emplist);
+    })
+
+  }
   // get f() { return this.loginForm.controls; }
  /*This Code is importatnt*/
  data; 
  _fnLogin(){
-     console.log(this.userData);
+     //console.log(this.userData);
     // window.localStorage['isLoggedIn'] = 1;
-    sessionStorage.setItem('isLoggedIn', '1');
+    //sessionStorage.setItem('isLoggedIn', '1');
 
     // console.log(this.data);
     
@@ -87,13 +97,24 @@ export class LoginComponent implements OnInit {
           return;
          }
      });
-     
-     
+  }
+  _fnCancle(){
 
-
+    this.userData.username = "";
+    this.userData.password = "";
+    return;
+  }
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
     
   }
+  Register(){
+    console.log("fromlogin");
+    this.getRegData();
+    this.modalRef.hide();
+  }
 
+ 
   submitted
   loading
   // onSubmit() {

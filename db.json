@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "userregistername": "fsdfs",
+      "userregisteremail": "sadf",
+      "userregisterpass": "sdf",
+      "userregisterconfpass": "sdf",
+      "id": 1
+    },
+    {
+      "userregistername": "fsdfs",
+      "userregisteremail": "sadf",
+      "userregisterpass": "sdf",
+      "userregisterconfpass": "sdf",
+      "id": 2
+    },
+    {
+      "userregistername": "asdas",
+      "userregisteremail": "asda",
+      "userregisterpass": "asdas",
+      "userregisterconfpass": "asd",
+      "id": 3
+    },
+    {
+      "userregistername": "asdfsd",
+      "userregisteremail": "sadf",
+      "userregisterpass": "sdf",
+      "userregisterconfpass": "sdf",
+      "id": 4
+    },
+    {
+      "userregistername": "asdfs",
+      "userregisteremail": "sdf",
+      "userregisterpass": "asdf",
+      "userregisterconfpass": "asdf",
+      "id": 5
+    }
+  ]
+}

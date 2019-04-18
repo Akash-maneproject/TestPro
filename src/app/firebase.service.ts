@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,7 +8,7 @@ export class FirebaseService {
 
   customer;
   authflag = false;
-  constructor(private _db:AngularFireDatabase) { }
+  constructor(private _db:AngularFireDatabase, public httpClient:HttpClient ) { }
 
   getEmpData(){
     // console.log(this._db.list("/example").snapshotChanges());
@@ -15,10 +16,17 @@ export class FirebaseService {
     
   }
 
-
   getLoginData(){
+    
     return  this._db.list("/login").snapshotChanges(); 
   }
+
+  // jwtData(){
+
+  //   return this.httpClient.post<{access_token:  string}>('http://www.your-server.com/auth/login', {email, password}).pipe(tap(res => {
+  //     localStorage.setItem('access_token', res.access_token);
+  // }))
+  // }
 
   setAuthFlag(value:boolean){
 
@@ -28,4 +36,18 @@ export class FirebaseService {
   getAuthFlag(){
     return localStorage.authflag;
   }
+
+  registratonData(data){
+     return this.httpClient.post('http://localhost:3004/posts',data)
+    
+  }
+
+  getEmpList(){
+
+    return this.httpClient.get('http://localhost:3004/posts')
+  }
+
+
 }
+
+

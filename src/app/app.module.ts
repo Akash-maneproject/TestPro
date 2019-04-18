@@ -20,6 +20,10 @@ import {environment } from '../environments/environment';
 import { AlertComponent } from './alert/alert.component';
 import { PagenotfounddataService } from './pagenotfounddata.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { EmployelistComponent } from './employelist/employelist.component';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
 
@@ -41,7 +45,9 @@ const routes: Routes = [
     DashboardComponent,
     PagenotfoundComponent,
     AlertComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegistrationComponent,
+    EmployelistComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.fireBaseconfig),
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ModalModule.forRoot()
 
   ],
   providers: [

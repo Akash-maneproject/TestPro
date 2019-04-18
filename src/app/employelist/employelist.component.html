@@ -1,0 +1,30 @@
+
+  <!-- <pre>{{ employeRegistration | json }}</pre> -->
+
+<div><table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let emp of employeRegistration">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.userregistername}}</td>
+        <td>{{ emp.userregisteremail}}</td>
+        <td>
+            <span class="glyphicon glyphicon-pencil"></span>
+            &nbsp;
+            &nbsp;
+            <span class="glyphicon glyphicon-trash"></span>
+  
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+

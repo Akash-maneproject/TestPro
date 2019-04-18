@@ -47,6 +47,10 @@ export class FirebaseService {
     return this.httpClient.get('http://localhost:3004/posts')
   }
 
+  delete_Emp(id){
+    return this.httpClient.delete('http://localhost:3004/posts/'+id)
+  }
+
 
 }
 

@@ -5,13 +5,6 @@
       "userregisteremail": "sadf",
       "userregisterpass": "sdf",
       "userregisterconfpass": "sdf",
-      "id": 1
-    },
-    {
-      "userregistername": "fsdfs",
-      "userregisteremail": "sadf",
-      "userregisterpass": "sdf",
-      "userregisterconfpass": "sdf",
       "id": 2
     },
     {
@@ -34,6 +27,13 @@
       "userregisterpass": "asdf",
       "userregisterconfpass": "asdf",
       "id": 5
+    },
+    {
+      "userregistername": "Rajesh",
+      "userregisteremail": "rajeshchaubey87@GMAIL.COM",
+      "userregisterpass": "3985282",
+      "userregisterconfpass": "326+5626",
+      "id": 6
     }
   ]
 }

@@ -22,8 +22,10 @@ import { PagenotfounddataService } from './pagenotfounddata.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { EmployelistComponent } from './employelist/employelist.component';
-
+// import { EmployelistComponent } from './employelist/employelist.component';
+ import { AdminModule } from '../app/admin/admin.module';
+import { AlluserdataComponent } from './alluserdata/alluserdata.component';
+import { SharedModule } from './sharedmodule.module';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
 
@@ -32,10 +34,10 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard]
  },
+  { path: 'alluserdata', component: AlluserdataComponent },
   {path: '', redirectTo:'login', pathMatch: 'full'},
   { path: '**', component: PagenotfoundComponent  },
   { path: 'pagenotfound', component: PagenotfoundComponent  },
-
   
 ];
 @NgModule({
@@ -47,7 +49,9 @@ const routes: Routes = [
     AlertComponent,
     NavbarComponent,
     RegistrationComponent,
-    EmployelistComponent,
+    // EmployelistComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -59,9 +63,14 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.fireBaseconfig),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AdminModule,
+    SharedModule
 
   ],
+  // exports:[
+  //   EmployelistComponent
+  // ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

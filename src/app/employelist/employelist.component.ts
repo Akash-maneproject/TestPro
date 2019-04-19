@@ -1,7 +1,7 @@
 import { Component, OnInit, Input,TemplateRef } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
+import { Router,ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-employelist',
@@ -10,12 +10,17 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class EmployelistComponent implements OnInit {
   tempID:any;
-  @Input() employeRegistration;
+  @Input() employeRegistration:any;
   modalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService,private firebaseService: FirebaseService) { }
+  constructor(private modalService: BsModalService,
+    private firebaseService: FirebaseService,
+    private router:Router,
+    private activatedRoute:ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    console.log(this.router.url);
   }
 
   Delete_confirm(){

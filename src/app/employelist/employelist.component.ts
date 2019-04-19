@@ -11,6 +11,7 @@ import { Router,ActivatedRoute } from "@angular/router";
 export class EmployelistComponent implements OnInit {
   tempID:any;
   @Input() employeRegistration:any;
+  @Input() isadmincredintial: boolean;
   modalRef: BsModalRef;
 
   constructor(private modalService: BsModalService,

@@ -9,16 +9,23 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./alluserdata.component.css']
 })
 export class AlluserdataComponent implements OnInit {
+  currentURL='';
 
-  constructor(public firebaseService:FirebaseService) { }
+ constructor(public firebaseService:FirebaseService) { 
+
+    this.currentURL = window.location.href;
+    
+  }
 
   ngOnInit() {
     this.getalluserinfo();
+    
   }
   emplist:any = [] ;
   getalluserinfo(){
-    this.firebaseService.getEmpList().subscribe( (data) => {
 
+    this.firebaseService.getEmpList().subscribe( (data) => {
+      
       this.emplist = data;
       console.log(this.emplist);
     })

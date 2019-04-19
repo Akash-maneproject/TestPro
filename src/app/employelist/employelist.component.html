@@ -7,6 +7,8 @@
         <th>id</th>
         <th>name</th>
         <th>Email</th>
+        <th *ngIf="isadmincredintial">User Name</th>
+        <th *ngIf="isadmincredintial">PassWord</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -15,6 +17,9 @@
         <td>{{ emp.id }}</td>
         <td>{{ emp.userregistername}}</td>
         <td>{{ emp.userregisteremail}}</td>
+        <td *ngIf="isadmincredintial">{{ emp.userregistername}}</td>
+        <td *ngIf="isadmincredintial">{{ emp.userregisterpass}}</td>
+        
         <td>
             <span class="glyphicon glyphicon-pencil" ></span>
             &nbsp;

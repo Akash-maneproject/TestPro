@@ -26,6 +26,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
  import { AdminModule } from '../app/admin/admin.module';
 import { AlluserdataComponent } from './alluserdata/alluserdata.component';
 import { SharedModule } from './sharedmodule.module';
+import { NgxLoadingModule } from 'ngx-loading';
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
 
@@ -65,7 +66,9 @@ const routes: Routes = [
     AngularFireDatabaseModule,
     ModalModule.forRoot(),
     AdminModule,
-    SharedModule
+    SharedModule,
+    NgxLoadingModule.forRoot({})
+    
 
   ],
   // exports:[

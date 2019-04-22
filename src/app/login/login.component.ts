@@ -5,7 +5,7 @@ import { AuthenticationService } from '../authentication.service';
 import { AlertService } from '../alert.service';
 import { FirebaseService } from '../firebase.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-
+import { NgxLoadingModule } from 'ngx-loading';
 
 import { first } from 'rxjs/operators';
 
@@ -17,6 +17,7 @@ import { first } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   returnUrl: string;
   modalRef: BsModalRef;
+  public loading = false;
   userData = {
     username:'',
     password: ''
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
     private alertService: AlertService,
     public activatedRoute: ActivatedRoute,
     public firebaseService: FirebaseService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    public ngxLoadingModule:NgxLoadingModule
  
   ) { 
 
@@ -56,6 +58,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.loading = true;
     console.log("login comp");
     this.getRegData();
     this.loginForm = this.fb.group({
@@ -69,11 +73,11 @@ export class LoginComponent implements OnInit {
   }
 emplist:any;
   getRegData(){
-
+    
     this.firebaseService.getEmpList().subscribe( (data) => {
-
+      this.loading = false;
       this.emplist = data;
-      console.log(this.emplist);
+     // console.log(this.emplist);
     })
 
   }
@@ -93,7 +97,9 @@ emplist:any;
        this.data = items;
          let username = this.data[1].payload.node_.value_; 
          let password = this.data[0].payload.node_.value_;
-
+        //  let type = this.data[2].payload.node_.value_;
+         console.log(username);
+         console.log(password);
          if(username == this.userData.username &&   password == this.userData.password){
           window.localStorage['isLoggedIn'] = 1;
           this._router.navigate(['/dashboard']);
@@ -135,7 +141,7 @@ emplist:any;
 
   }
   submitted
-  loading
+
   // onSubmit() {
   //   this.submitted = true;
   //  // stop here if form is invalid

@@ -21,7 +21,7 @@
         <td *ngIf="isadmincredintial">{{ emp.userregisterpass}}</td>
         
         <td>
-            <span class="glyphicon glyphicon-pencil" ></span>
+            <span class="glyphicon glyphicon-pencil" (click) = "openRedistration(emp,editemplate)"></span>
             &nbsp;
             &nbsp;
             <span class="glyphicon glyphicon-trash" (click) = "openDeleteModel(emp.id,deletetemplate)"></span>
@@ -40,4 +40,10 @@
       <button type="button" class="btn btn-default" (click)="Delete_confirm()" >Yes</button>
       <button type="button" class="btn btn-primary" (click)="decline()" >No</button>
     </div>
+  </ng-template>
+
+  <ng-template #editemplate >
+      <div class="modal-body">
+        <app-registration (onRegisterUpdate)="onRegisterUpdate()" [userRegisterData] = "editempData"></app-registration>
+      </div>
   </ng-template>

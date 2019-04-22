@@ -21,6 +21,13 @@ export class LoginComponent implements OnInit {
     username:'',
     password: ''
   }
+
+   userRegisterData = {
+    userregistername:'',
+    userregisteremail: '',
+    userregisterpass:'',
+    userregisterconfpass:''
+  }
   loginForm: FormGroup;
   SignupForm: FormGroup; 
   constructor(public _router: Router,
@@ -49,6 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("login comp");
     this.getRegData();
     this.loginForm = this.fb.group({
 
@@ -105,16 +113,27 @@ emplist:any;
     return;
   }
   openModal(template: TemplateRef<any>) {
+    this.userRegisterData = {
+      userregistername:'',
+      userregisteremail: '',
+      userregisterpass:'',
+      userregisterconfpass:''
+    }
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
     
   }
-  Register(){
-    console.log("fromlogin");
-    this.getRegData();
+  onRegisterUpdate(){
     this.modalRef.hide();
+    // this.getRegData();
   }
 
- 
+
+  Register(){
+
+    this.getRegData();
+    this.modalRef.hide();
+
+  }
   submitted
   loading
   // onSubmit() {

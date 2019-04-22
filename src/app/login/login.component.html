@@ -41,7 +41,9 @@
 
 <ng-template #templatedata>
   <div class="modal-body ">
-    <app-registration (onRegister)="Register()"></app-registration>
+    <app-registration 
+    (onRegisterUpdate)="getRegData()"
+    [userRegisterData] = "userRegisterData" (_onRegister)="Register()"></app-registration>
   </div>
 </ng-template>
 

@@ -41,6 +41,11 @@ export class FirebaseService {
      return this.httpClient.post('http://localhost:3004/posts',data)
     
   }
+  updateRegistratonData(data){
+    console.log(data);
+    return this.httpClient.put('http://localhost:3004/posts/'+data.id,data)
+   
+ }
 
   getEmpList(){
 

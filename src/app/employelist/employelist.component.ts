@@ -21,7 +21,7 @@ export class EmployelistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.router.url);
+    
   }
 
   Delete_confirm(){
@@ -45,5 +45,27 @@ export class EmployelistComponent implements OnInit {
 this.tempID = id;
 
 }
+
+
+editempData = {
+  userregistername:'',
+  userregisteremail: '',
+  userregisterpass:'',
+  userregisterconfpass:''
+}
+openRedistration(emp,regeditTemplateRef:TemplateRef<any>){
+ this.editempData = JSON.parse(JSON.stringify(emp));
+  this.modalRef = this.modalService.show(regeditTemplateRef, {class: 'modal-sm'});  
+
+}
+onRegisterUpdate(){
+  this.modalRef.hide();
+  console.log("sdsdsd");
+  this.firebaseService.getEmpList().subscribe( (data1)=>{
+  this.employeRegistration = data1;
+})
+
+}
+
 
 }

@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
+// import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+// import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // import {  } from "@angu";
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ import {environment } from '../environments/environment';
 import { AlertComponent } from './alert/alert.component';
 import { PagenotfounddataService } from './pagenotfounddata.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { RegistrationComponent } from './registration/registration.component';
+// import { RegistrationComponent } from './registration/registration.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 // import { EmployelistComponent } from './employelist/employelist.component';
  import { AdminModule } from '../app/admin/admin.module';
@@ -48,17 +48,17 @@ const routes: Routes = [
     PagenotfoundComponent,
     AlertComponent,
     NavbarComponent,
-    RegistrationComponent,
+    // RegistrationComponent,
     // EmployelistComponent,
     
     
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
     // AppRoutingModule,
-    FormsModule,
+    // FormsModule,
+    // ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.fireBaseconfig),
     AngularFirestoreModule,

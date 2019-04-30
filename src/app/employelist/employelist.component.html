@@ -4,16 +4,37 @@
 <div><table class="table">
     <thead>
       <tr>
+        <th>
+          <input type="checkbox"
+          [(ngModel)]="selectAll"
+          (change)="selectAllChange()"
+          name="selectAll" id="selecteAll">
+          Selecte All<!-- = {{selectAll}} -->
+        </th>
         <th>id</th>
         <th>name</th>
         <th>Email</th>
         <th *ngIf="isadmincredintial">User Name</th>
         <th *ngIf="isadmincredintial">PassWord</th>
+        <th>select</th>
+        <th>check box</th>
+        <th>Radio M/F</th>
         <th>Action</th>
+        
       </tr>
     </thead>
     <tbody>
       <tr *ngFor = "let emp of employeRegistration">
+          <td>
+            <label for="">
+
+
+              <input type="checkbox" 
+              (change)="selectMe(emp)"
+              [(ngModel)]="emp.isChked" name="" id="">
+              <!-- {{emp.isChked}} -->
+            </label>
+          </td>
         <td>{{ emp.id }}</td>
         <td>{{ emp.userregistername}}</td>
         <td>{{ emp.userregisteremail}}</td>
@@ -21,6 +42,15 @@
         <td *ngIf="isadmincredintial">{{ emp.userregisterpass}}</td>
         <td *ngIf="isadmincredintial">{{ emp.selectdata}}</td>
         
+       
+        <td> <span *ngIf="emp.TL == true " >Tyrion Lannister,</span>
+         <span *ngIf="emp.JM == true ">Jaime Lannister, </span> 
+         <span *ngIf="emp.RL == true ">Rajesh Lannister, </span>
+         <span *ngIf="emp == '' ">113</span></td>
+
+
+        <td>{{ emp.male ? 'male' : 'female'}}</td>
+
         <td>
             <span class="glyphicon glyphicon-pencil" (click) = "openRedistration(emp,editemplate)"></span>
             &nbsp;
@@ -37,6 +67,9 @@
     </tbody>
   </table>
 </div>
+
+
+<button class="btn btn-danger" (click)="deleteSelected()"> Delete Selected</button> 
 
 
 <ng-template #deletetemplate>

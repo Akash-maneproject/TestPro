@@ -15,10 +15,7 @@ export class RegistrationComponent implements OnInit {
   @Output() onRegisterUpdate = new EventEmitter();
   
   @Input() isDisable;
-
-
-  
-
+ 
   // D = this.isDisable;
   constructor(public firebaseService: FirebaseService) { 
     // this.isDisable="qqqqqqqqqqq";
@@ -27,7 +24,8 @@ export class RegistrationComponent implements OnInit {
   
   ngOnInit() {
     console.log("D:",this.isDisable);
-
+    //  this.userRegisterData.male = true;
+    // this.userRegisterData.TL = true;  
   }
 
   // userRegisterData = {
@@ -51,8 +49,12 @@ export class RegistrationComponent implements OnInit {
           userregisteremail: '',
           userregisterpass: '',
           userregisterconfpass: '',
-          selectdata:''
-
+          selectdata:'',
+          male:'',
+          isChked: '',
+          TL: '',
+          JM: '',
+          RL: ''
         }
       });
 
@@ -83,7 +85,16 @@ export class RegistrationComponent implements OnInit {
           userregistername: '',
           userregisteremail: '',
           userregisterpass: '',
-          userregisterconfpass: ''
+          userregisterconfpass: '',
+          selectdata:'',
+          male:'',
+          isChked: '',
+          TL: '',
+          JM: '',
+          RL: ''
+    
+
+         
         }
         this.onRegisterUpdate.emit();
       });

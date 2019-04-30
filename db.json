@@ -6,7 +6,53 @@
       "userregisterpass": "asd",
       "userregisterconfpass": "ASD",
       "selectdata": "small",
-      "id": 17
+      "id": 17,
+      "isChked": false,
+      "male": true,
+      "TL": true,
+      "JM": false,
+      "RL": false
+    },
+    {
+      "userregistername": "asd",
+      "userregisteremail": "asd",
+      "userregisterpass": "sdf",
+      "userregisterconfpass": "sadf",
+      "selectdata": "medium",
+      "RL": true,
+      "id": 18,
+      "isChked": false
+    },
+    {
+      "userregistername": "sdf",
+      "userregisteremail": "sdf",
+      "userregisterpass": "sdf",
+      "userregisterconfpass": "sdf",
+      "male": true,
+      "TL": true,
+      "selectdata": "small",
+      "id": 20
+    },
+    {
+      "userregistername": "bbbb",
+      "userregisteremail": "bb",
+      "userregisterpass": "bbb",
+      "userregisterconfpass": "bbb",
+      "male": true,
+      "TL": true,
+      "selectdata": "large",
+      "id": 21
+    },
+    {
+      "userregistername": "aaadddrr",
+      "userregisteremail": "rrr",
+      "userregisterpass": "rrr",
+      "userregisterconfpass": "rr",
+      "male": false,
+      "TL": false,
+      "selectdata": "small",
+      "JM": true,
+      "id": 22
     }
   ]
 }

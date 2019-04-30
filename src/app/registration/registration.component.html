@@ -2,7 +2,7 @@
         <fieldset>
           <div id="legend">
             <legend class="">Register</legend>
-            <!-- <p>{{isDisable }}</p> -->
+            <p>{{isDisable }}</p>
           </div>
           <div class="control-group">
             <!-- Username -->
@@ -80,7 +80,36 @@
                   </select> 
                 </div>
           </div>
-       
+          
+          <div class="control-group" >
+          
+            <label class="control-label" for="ChkBK">Game of Thrones</label>
+            <div class="controls">{{userRegisterData.TL}}
+              <div>
+                <input type="checkbox"  required [(ngModel)]="userRegisterData.TL" id="Tyrion_Lannister"  name="userChoicedata1" value="Tyrion Lannister" >
+                <label for="TL">Tyrion Lannister  </label>
+              </div>
+              <div>
+                <input type="checkbox" [checked]="userRegisterData.JM" id="Jaime_Lannister" [(ngModel)]="userRegisterData.JM" name="userChoicedata2" value="Jaime Lannister" >
+                <label for="JL">Jaime Lannister </label>
+              </div>
+              <div>
+                <input type="checkbox" id="Rajesh_Lannister" [(ngModel)]="userRegisterData.RL" name="userChoicedata3" value="Jaime Lannister" >
+                <label for="RJ">Rajesh Lannister </label>
+              </div>
+            </div>
+          </div>
+          <div class="control-group" >
+          
+          <div class="radio-inline">
+              <label class="control-label" for="RadioBTN">Radio BTN</label>
+            <input id="gender" type="radio" name="genderControl" [(ngModel)]="userRegisterData.male" [value]="true"   />
+            <label class="radio-label"> Male</label>
+            <input id="gender" type="radio" name="genderControl"  [(ngModel)]="userRegisterData.male" [value] ="false" />
+            <label class="radio-label">Female</label>
+          </div>
+          </div>
+          
           <div class="control-group">
             <!-- Button -->
            <!-- <pre> {{formGroup2 | json}}</pre> -->

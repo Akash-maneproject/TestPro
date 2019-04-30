@@ -56,6 +56,8 @@ export class FirebaseService {
     return this.httpClient.delete('http://localhost:3004/posts/'+id)
   }
 
+  
+
 
 }
 

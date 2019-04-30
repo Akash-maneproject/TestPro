@@ -19,6 +19,7 @@
         <td>{{ emp.userregisteremail}}</td>
         <td *ngIf="isadmincredintial">{{ emp.userregistername}}</td>
         <td *ngIf="isadmincredintial">{{ emp.userregisterpass}}</td>
+        <td *ngIf="isadmincredintial">{{ emp.selectdata}}</td>
         
         <td>
             <span class="glyphicon glyphicon-pencil" (click) = "openRedistration(emp,editemplate)"></span>
@@ -27,7 +28,7 @@
             <span class="glyphicon glyphicon-trash" (click) = "openDeleteModel(emp.id,deletetemplate)"></span>
             &nbsp;
             &nbsp;
-            <span class="glyphicon glyphicon-eye-open" ></span>
+            <span class="glyphicon glyphicon-eye-open"  (mouseover) ="openRedistration(emp,editemplate)"></span>
   
 
           </td>
@@ -49,5 +50,10 @@
   <ng-template #editemplate >
       <div class="modal-body">
         <app-registration (onRegisterUpdate)="onRegisterUpdate()" [userRegisterData] = "editempData"></app-registration>
+      </div>
+  </ng-template>
+  <ng-template #viewemplate >
+      <div class="modal-body "  >
+        <app-registration [isDisable]="true"  [userRegisterData] = "viewemplateData"></app-registration>
       </div>
   </ng-template>

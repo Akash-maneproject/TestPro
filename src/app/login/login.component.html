@@ -43,6 +43,7 @@
 <ng-template #templatedata>
   <div class="modal-body ">
     <app-registration 
+    [isDisable]="userRegisterData"
     (onRegisterUpdate)="getRegData()"
     [userRegisterData] = "userRegisterData" (_onRegister)="Register()"></app-registration>
   </div>

@@ -2,14 +2,17 @@
         <fieldset>
           <div id="legend">
             <legend class="">Register</legend>
+            <!-- <p>{{isDisable }}</p> -->
           </div>
           <div class="control-group">
             <!-- Username -->
+          
             <label class="control-label"  for="username">Username</label>
             <div class="controls">
               <input type="text" 
               id="username" 
               required
+
               name="username" 
               placeholder="User Name" 
               [(ngModel)]="userRegisterData.userregistername"
@@ -31,7 +34,8 @@
               <p class="help-block">Please provide your E-mail</p>
             </div>
           </div>
-       
+
+                 
           <div class="control-group">
           
             <label class="control-label" for="password">Password</label>
@@ -61,14 +65,31 @@
               <p class="help-block">Please confirm password</p>
             </div>
           </div>
+          <div class="control-group">
+              <label class="control-label" for="company">Company</label>
+              <div class="controls">    
+                <select id="company"  
+                name="userselectData"
+                class="form-control" 
+                required
+                [(ngModel)]="userRegisterData.selectdata">
+                    <option value="">none</option>
+                    <option value="small">small</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                  </select> 
+                </div>
+          </div>
        
           <div class="control-group">
             <!-- Button -->
            <!-- <pre> {{formGroup2 | json}}</pre> -->
+           <label class="control-label" for="Sbmit"></label>
+              
             <div class="controls" >
               <button  [disabled]="formGroup2.invalid" type="submit" class="btn btn-success" >{{userRegisterData.id ? 'Update' : 'Register'}}</button>
             </div>
-            {{userRegisterData | json}}
+            <!-- {{userRegisterData | json}} -->
           </div>
         </fieldset>
       </form>

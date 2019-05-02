@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Dunebook } from './Dunebook';
 import { HttpClient } from '@angular/common/http';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   dunebookList: any;
-  constructor(private httpClient: HttpClient) { }
+
+  constructor(
+    private router:Router
+    ,private httpClient: HttpClient) { }
   getDunebookData() {
     this.httpClient.post('http://localhost:3004/posts',{
       "title": "test",
@@ -22,4 +25,18 @@ export class AppComponent {
 
 
   }
+
+  // showNavBar:Boolean =false; 
+
+  // changeOfRoutes(){
+  //   console.log(this.router.url)
+  //   if(this.router.url != '/login'){
+  //     this.showNavBar =true;
+  //   }else{
+  //     this.showNavBar =false;
+  //   }
+  //  }
+
+
+ 
 }

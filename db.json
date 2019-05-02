@@ -1,58 +1,64 @@
 {
   "posts": [
     {
-      "userregistername": "asd",
-      "userregisteremail": "asd",
-      "userregisterpass": "asd",
-      "userregisterconfpass": "ASD",
+      "userregistername": "zxcvzxcv",
+      "userregisteremail": "xzcvz",
+      "userregisterpass": "xzcv",
+      "userregisterconfpass": "zxcv",
+      "male": false,
       "selectdata": "small",
-      "id": 17,
-      "isChked": false,
-      "male": true,
+      "TL": true,
+      "JM": true,
+      "RL": false,
+      "id": 1
+    },
+    {
+      "userregistername": "zxcv",
+      "userregisteremail": "asdasd",
+      "userregisterpass": "asdASD",
+      "userregisterconfpass": "Asda",
+      "male": false,
+      "selectdata": "large",
       "TL": true,
       "JM": false,
-      "RL": false
+      "RL": false,
+      "id": 2
     },
     {
-      "userregistername": "asd",
-      "userregisteremail": "asd",
-      "userregisterpass": "sdf",
-      "userregisterconfpass": "sadf",
-      "selectdata": "medium",
-      "RL": true,
-      "id": 18,
-      "isChked": false
-    },
-    {
-      "userregistername": "sdf",
-      "userregisteremail": "sdf",
-      "userregisterpass": "sdf",
-      "userregisterconfpass": "sdf",
+      "userregistername": "sdfa",
+      "userregisteremail": "asdfasdsadfasfd",
+      "userregisterpass": "sadfasdf",
+      "userregisterconfpass": "sdfsadf",
       "male": true,
-      "TL": true,
       "selectdata": "small",
-      "id": 20
-    },
-    {
-      "userregistername": "bbbb",
-      "userregisteremail": "bb",
-      "userregisterpass": "bbb",
-      "userregisterconfpass": "bbb",
-      "male": true,
       "TL": true,
-      "selectdata": "large",
-      "id": 21
+      "JM": false,
+      "RL": false,
+      "id": 3
     },
     {
-      "userregistername": "aaadddrr",
-      "userregisteremail": "rrr",
-      "userregisterpass": "rrr",
-      "userregisterconfpass": "rr",
+      "userregistername": "sads",
+      "userregisteremail": "dfsdfas",
+      "userregisterpass": "dfsadf",
+      "userregisterconfpass": "aSDAS",
       "male": false,
-      "TL": false,
       "selectdata": "small",
+      "TL": true,
       "JM": true,
-      "id": 22
+      "RL": false,
+      "id": 4
+    },
+    {
+      "userregistername": "CXV",
+      "userregisteremail": "XCV",
+      "userregisterpass": "ZXCV",
+      "userregisterconfpass": "ZXCV",
+      "male": true,
+      "selectdata": "small",
+      "TL": true,
+      "JM": false,
+      "RL": false,
+      "id": 5
     }
   ]
 }

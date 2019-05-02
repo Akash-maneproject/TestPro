@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     username: '',
     password: ''
   }
+  isLoggedIn:Boolean = false;
 
   userRegisterData = {
     userregistername: '',
@@ -107,8 +108,10 @@ export class LoginComponent implements OnInit {
       console.log(password);
       if (username == this.userData.username && password == this.userData.password) {
         window.localStorage['isLoggedIn'] = 1;
-        this._router.navigate(['/dashboard']);
+       
         this.firebaseService.setAuthFlag(true);
+        this.isLoggedIn = this.firebaseService.getAuthFlag();
+        this._router.navigate(['/dashboard']);
       } else {
 
         alert("Username and password is incorrect");

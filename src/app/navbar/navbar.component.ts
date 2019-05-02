@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../firebase.service';
 import { Router,ActivatedRoute } from "@angular/router";
+// import { FirebaseService } from "../firebase.service";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,7 +11,12 @@ export class NavbarComponent implements OnInit {
 
   constructor(public firebaseService: FirebaseService,public _router: Router) { }
 
+
+ 
+
   ngOnInit() {
+// window.localStorage['isLoggedIn'] = 1;
+    
   }
 
   _fnLogout(){
@@ -23,4 +29,12 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  alldataCall(){
+
+    console.log(this._router.url);
+    this._router.navigate(['/alluserdata']);
+
+  }
+
 }
+
